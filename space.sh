@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-echo $0
 telegram_chat_id=$1
 bot_token=$2
 disk_space_limit=$3
@@ -13,8 +12,6 @@ disk_name=$(echo $command | cut -d' ' -f 8)
 # https://stackoverflow.com/a/428118
 used=$(echo $command | cut -d' ' -f 12 | cut -d'%' -f 1)
 ip=$(echo $(hostname -I | cut -d ' ' -f 1))
-
-echo $message_send
 
 echo "Checking disk space..."
 if [ $used -gt $disk_space_limit ]
